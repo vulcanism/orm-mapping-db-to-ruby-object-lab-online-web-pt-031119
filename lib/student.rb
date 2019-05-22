@@ -70,6 +70,7 @@ class Student
   end
   
   def self.students_below_12th_grade
+<<<<<<< HEAD
     sql = <<-SQL
     SELECT *
     FROM students
@@ -79,6 +80,11 @@ class Student
     DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
     end
+=======
+    sql = "SELECT * FROM students WHERE grade < 12"
+    
+    DB[:conn].execute(sql)
+>>>>>>> a4c340e52541d1f6acc3fdad0ade0e91b27e9033
   end
   
   def self.first_X_students_in_grade_10(n)
